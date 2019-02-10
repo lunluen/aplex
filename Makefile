@@ -4,6 +4,9 @@ init:
 	pip install --user --upgrade pipenv
 	pipenv install --dev
 
+check:
+	echo "TODO"
+
 test:
 	pipenv run pytest
 
@@ -18,7 +21,8 @@ coverage:
 	pipenv run codecov
 
 publish:
-	pipenv run python setup.py upload
+	echo "TODO"
+	# pipenv run python setup.py upload
 	# TODO(Lun): upload docs.
 
 docs:
