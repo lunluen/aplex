@@ -1,0 +1,16 @@
+include CONTRIBUTING.md
+include HISTORY.md
+include LICENSE
+include MANIFEST.in
+include Pipfile Pipfile.lock
+include pytest.ini
+include README.md
+include tox.ini
+graft aplex
+graft docs
+graft examples
+graft tests
+graft misc
+global-exclude __pycache__
+global-exclude *.py[co]
+

@@ -1,0 +1,9 @@
+# Config of coverage.
+
+[run]
+branch = True
+concurrency = multiprocessing
+source =
+    aplex
+omit =
+    */__version__.py

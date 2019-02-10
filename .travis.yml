@@ -1,0 +1,53 @@
+branches:
+  only:
+    master
+    ^\d+\.\d+\.\d+(-.+)?$
+
+os:
+  - linux
+  - windows
+  - osx
+
+# dist: xenial
+
+language: python
+
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+  - pypy
+
+matrix:
+  allow_failures:
+    - python: pypy
+    - os: osx
+
+  fast_finish: true
+
+cache: pip
+
+install: make init
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+stages:
+  - Check
+  - Test
+  - Coverage
+  - Build
+  - Deploy
+
+jobs:
+  include:
+    - stage: Check
+      script: make check
+    - stage: Coverage
+      script: make coverage
+    - stage: Build
+      script: make docs
+    - stage: Deploy
+      script: make publish
