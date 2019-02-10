@@ -8,8 +8,6 @@ os:
   - windows
   - osx
 
-# dist: xenial
-
 language: python
 
 python:
@@ -56,6 +54,7 @@ jobs:
     - stage: Check
       script: make check
     - stage: Coverage
+      python: 3.7  # A workround for now to be deleted.
       script: make coverage
     - stage: Build
       script: make docs
