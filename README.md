@@ -1,14 +1,14 @@
 # Aplex
 
 [![Build Status](https://travis-ci.org/lunluen/aplex.svg?branch=master)](https://travis-ci.org/lunluen/aplex)
-[![coverage](https://img.shields.io/codecov/c/github/lunluen/aplex.svg?style=flat)]()
+[![codecov](https://codecov.io/gh/lunluen/aplex/branch/master/graph/badge.svg)](https://codecov.io/gh/lunluen/aplex)
 [![platform]()]()
 [![supported pythons](https://img.shields.io/pypi/pyversions/aplex.svg?style=flat)](https://pypi.org/project/aplex/)
 [![package version](https://img.shields.io/pypi/v/aplex.svg?style=flat)](https://pypi.org/project/aplex/)
 [![license](https://img.shields.io/github/license/lunluen/aplex.svg?style=flat)](https://github.com/lunluen/aplex/blob/master/LICENSE)
 [![maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat)](https://github.com/lunluen/aplex)
 
-Translation: 
+Translations: 
 [简体中文](https://github.com/lunluen/aplex/blob/master/README_zh_cn.md)
 |
 [繁體中文](https://github.com/lunluen/aplex/blob/master/misc/README_zh_tw.md)

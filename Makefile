@@ -20,13 +20,17 @@ lint:
 	pipenv run flake8
 
 coverage:
-	pipenv run coverage report
-	pipenv run codecov
+	# TODO(Lun): To be deleted. Just a workaround for now for a combined
+	# report of py35-37
+	pip install tox
+	tox
+	#pipenv run coverage report
+	#pipenv run codecov
+
+docs:
+	cd docs && pipenv run make html
 
 publish:
 	echo "TODO"
 	# pipenv run python setup.py upload
 	# TODO(Lun): upload docs.
-
-docs:
-	cd docs && pipenv run make html
