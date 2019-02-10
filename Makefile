@@ -1,7 +1,7 @@
 .PHONY: docs
 
 init:
-	pip install --user --upgrade pipenv
+	pip install --upgrade pipenv
 	pipenv install --dev
 
 check:
@@ -27,4 +27,3 @@ publish:
 
 docs:
 	cd docs && pipenv run make html
-	sphinx-apidoc -f -o docs/source projectdir
