@@ -3,6 +3,9 @@
 init:
 	pip install --upgrade pipenv
 	pipenv install --dev
+	
+	# TODO(Lun): To be deleted. Just a workaround for now considering Windows.
+	pipenv install --dev uvloop
 
 check:
 	echo "TODO"

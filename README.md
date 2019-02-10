@@ -1,12 +1,12 @@
 # Aplex
 
-[![build](https://img.shields.io/travis/com/lunluen/aplex.svg?style=flat)]()
-[![coverage](https://img.shields.io/codecov/c/github/lunluen/aplex.svg?style=flat)](https://github.com/lunluen/aplex)
+[![Build Status](https://travis-ci.org/lunluen/aplex.svg?branch=master)](https://travis-ci.org/lunluen/aplex)
+[![coverage](https://img.shields.io/codecov/c/github/lunluen/aplex.svg?style=flat)]()
 [![platform]()]()
-[![supported pythons](https://img.shields.io/pypi/pyversions/aplex.svg?style=flat)]()
-[![package version](https://img.shields.io/pypi/v/aplex.svg?style=flat)]()
-[![license](https://img.shields.io/github/license/lunluen/aplex.svg?style=flat)]()
-[![maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat)]()
+[![supported pythons](https://img.shields.io/pypi/pyversions/aplex.svg?style=flat)](https://pypi.org/project/aplex/)
+[![package version](https://img.shields.io/pypi/v/aplex.svg?style=flat)](https://pypi.org/project/aplex/)
+[![license](https://img.shields.io/github/license/lunluen/aplex.svg?style=flat)](https://github.com/lunluen/aplex/blob/master/LICENSE)
+[![maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat)](https://github.com/lunluen/aplex)
 
 Translation: 
 [简体中文](https://github.com/lunluen/aplex/blob/master/README_zh_cn.md)

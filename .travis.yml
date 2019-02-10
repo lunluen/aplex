@@ -27,9 +27,9 @@ matrix:
       python: 3.7  # See travis issue 10312
 
   allow_failures:
-    - python: pypy3.5
-    - os: osx
-    - os: windows
+    - python: pypy3.5  # See pipenv issue 3313 for pypy.
+    - os: osx  # Travis does not support Python on osx for now.
+    - os: windows  # Travis does not support Python on osx for now.
 
   fast_finish: true
 
