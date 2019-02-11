@@ -32,6 +32,9 @@ Load Balancer Objects
 
 .. module:: aplex.load_balancers
 
+.. autoclass:: LoadBalancer
+    :members:
+
 .. autoclass:: RoundRobin
     :members:
     :inherited-members:
@@ -43,15 +46,3 @@ Load Balancer Objects
 .. autoclass:: Average
     :members:
     :inherited-members:
-
-.. autoclass:: LoadBalancer
-    :members:
-
-
-Module contents
----------------
-
-.. automodule:: aplex
-    :members:
-    :undoc-members:
-    :show-inheritance:

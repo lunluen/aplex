@@ -1,4 +1,4 @@
-# Aplex
+# Aplex Quickstart
 
 [![Build Status](https://travis-ci.org/lunluen/aplex.svg?branch=master)](https://travis-ci.org/lunluen/aplex)
 [![codecov](https://codecov.io/gh/lunluen/aplex/branch/master/graph/badge.svg)](https://codecov.io/gh/lunluen/aplex)
@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/github/license/lunluen/aplex.svg?style=flat)](https://github.com/lunluen/aplex/blob/master/LICENSE)
 [![maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat)](https://github.com/lunluen/aplex)
 
-Translations: 
+Translations:
 [简体中文](https://github.com/lunluen/aplex/blob/master/misc/README_zh_cn.md)
 |
 [繁體中文](https://github.com/lunluen/aplex/blob/master/misc/README_zh_tw.md)
@@ -38,6 +38,7 @@ git clone https://github.com/lunluen/aplex.git
 cd aplex
 pipenv install --dev
 ```
+
 or with setuptools
 
 ```bash
@@ -150,8 +151,7 @@ class MyAwesomeLoadBalancer(LoadBalancer):
         return the_poor_guy
 ```
 
-See details of how to implement a load balancer at: []()
-
+See details of how to implement a load balancer at: [LoadBalancer in API Reference](https://aplex.readthedocs.io/en/latest/api.html#module-aplex.load_balancers)
 
 ### Worker loop factory
 
