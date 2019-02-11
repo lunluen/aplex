@@ -1,4 +1,1 @@
-How to contribute
-=================
-
-.. include:: ../CONTRIBUTING
+.. mdinclude:: ../CONTRIBUTING.md

@@ -39,7 +39,7 @@ release = '1.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'recommonmark',  # For parsing markdown.
+    'm2r',  # For markdown including.
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',  # For Google style docstrings.
 

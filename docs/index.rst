@@ -6,6 +6,9 @@
 Welcome to Aplex!
 =====================
 
+|Build Status| |codecov| |platform| |supported pythons| |package
+version| |license| |maintenance|
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -50,3 +53,18 @@ License
    :maxdepth: 2
 
    license
+
+.. |Build Status| image:: https://travis-ci.org/lunluen/aplex.svg?branch=master
+   :target: https://travis-ci.org/lunluen/aplex
+.. |codecov| image:: https://codecov.io/gh/lunluen/aplex/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/lunluen/aplex
+.. |platform| image:: https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-orange.svg
+   :target: https://github.com/lunluen/aplex
+.. |supported pythons| image:: https://img.shields.io/pypi/pyversions/aplex.svg?style=flat
+   :target: https://pypi.org/project/aplex/
+.. |package version| image:: https://img.shields.io/pypi/v/aplex.svg?style=flat
+   :target: https://pypi.org/project/aplex/
+.. |license| image:: https://img.shields.io/github/license/lunluen/aplex.svg?style=flat
+   :target: https://github.com/lunluen/aplex/blob/master/LICENSE
+.. |maintenance| image:: https://img.shields.io/maintenance/yes/2019.svg?style=flat
+   :target: https://github.com/lunluen/aplex
