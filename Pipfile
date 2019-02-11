@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+aplex = {editable = true,path = "."}
 pytest = "*"
 pytest-mock = "*"
 pytest-sugar = "*"
@@ -11,11 +12,9 @@ pytest-timeout = "*"
 pytest-cov = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-recommonmark = "*"
 sphinx-intl = "*"
+recommonmark = "*"
+m2r = "*"
+twine = "*"
 
 [packages]
-sphinx = "*"
-sphinx-rtd-theme = "*"
-twine = "*"
-aplex = {editable = true,path = "."}
