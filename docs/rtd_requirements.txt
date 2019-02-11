@@ -1,0 +1,4 @@
+# Waiting for pipenv support of ReadtheDocs, This file will be removed soon. 
+# See at https://github.com/rtfd/readthedocs.org/issues/3181
+
+m2r
