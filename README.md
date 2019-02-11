@@ -18,7 +18,7 @@ multiprocessing and threading.
 
 - Aplex helps you run coroutines and functions in other process
   or thread with asyncio.
-- Aplex provides a usage like that of  standard library `concurrent.futures`,
+- Aplex provides a usage like that of standard library `concurrent.futures`,
   which is familiar to you and intuitive.
 - Aplex lets you do load balancing in a simple way if you need.
 
@@ -39,7 +39,7 @@ cd aplex
 pipenv install --dev
 ```
 
-or with setuptools
+or with setuptools:
 
 ```bash
 git clone https://github.com/lunluen/aplex.git
@@ -94,7 +94,8 @@ for status in pool.map(demo, iterable, timeout=10):
 
 ### Awaiting results
 
-Aplex allows one to await results with loop that already exists. It's quite simple.
+Aplex allows one to `await` results with the event loop that already exists.
+It's quite simple.
 
 Just set keyword argument `awaitable`  to `True`!
 
@@ -104,14 +105,14 @@ For example:
 pool = ProcessAsyncPoolExecutor(awaitable=True)
 ```
 
-Then 
+Then
 
 ```python
 future = pool.submit(demo, 'http://httpbin.org')
 status = await future
 ```
 
-How about map?
+How about `map`?
 
 ```python
 async for status in pool.map(demo, iterable, timeout=10):
@@ -120,12 +121,13 @@ async for status in pool.map(demo, iterable, timeout=10):
 
 ### Load balancing
 
-In aplex, each worker is the process or thread on your computer. That is, they have the same capability computing.
+In aplex, each worker running your works is the process or thread on your
+computer. That is, they have the same capability computing.
 *But*, your works might have different workloads. Then you need a load balancer.
 
 Aplex provides some useful load balancers. They are `RoundRobin`, `Random`, and `Average`. The default is `RoundRobin`.
 
-Simply set this in contruction keyword argument:
+Simply set what you want in the keyword argument of contruction:
 
 ```python
 from aplex.load_balancers import Average
