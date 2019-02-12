@@ -13,11 +13,11 @@ Translations:
 |
 [繁體中文](https://github.com/lunluen/aplex/blob/master/misc/README_zh_tw.md)
 
-"Aplex", short for "asynchronous pool executor", is a Python library for combining asyncio with
-multiprocessing and threading.
+"Aplex", short for "**a**synchronous **p**oo**l** **ex**ecutor", is a Python
+library for combining asyncio with multiprocessing and threading.
 
-- Aplex helps you run coroutines and functions in other process
-  or thread with asyncio.
+- Aplex helps you run coroutines and functions in other processes
+  or threads with asyncio concurrently and in parallel (if with processes).
 - Aplex provides a usage like that of standard library `concurrent.futures`,
   which is familiar to you and intuitive.
 - Aplex lets you do load balancing in a simple way if you need.
@@ -130,6 +130,7 @@ Aplex provides some useful load balancers. They are `RoundRobin`, `Random`, and 
 Simply set what you want in the keyword argument of contruction:
 
 ```python
+from aplex import ProcessAsyncPoolExecutor
 from aplex.load_balancers import Average
 
 if __name__ == '__main__':
@@ -153,7 +154,7 @@ class MyAwesomeLoadBalancer(LoadBalancer):
         return the_poor_guy
 ```
 
-See details of how to implement a load balancer at: [LoadBalancer in API Reference](https://aplex.readthedocs.io/en/latest/api.html#module-aplex.load_balancers)
+See details of how to implement a load balancer at: [LoadBalancer | API Reference](https://aplex.readthedocs.io/en/latest/api.html#module-aplex.load_balancers)
 
 ### Worker loop factory
 
@@ -161,10 +162,49 @@ By the way, if you think the build-in asyncio loop is too slow:
 
 ```python
 import uvloop
+from aplex import ProcessAsyncPoolExecutor
 
 if __name__ == '__main__':
     pool = ProcessAsyncPoolExecutor(worker_loop_factory=uvloop.Loop)
 ```
+
+## Graceful Exit
+
+Takeing Python3.6 for example, a graceful exit without aplex would be something like this:
+
+```python
+try:
+    loop.run_forever()
+finally:
+    try:
+        tasks = asyncio.Task.all_tasks()
+        if tasks:
+            for task in tasks:
+                task.cancel()
+            gather = asyncio.gather(*tasks)
+            loop.run_until_complete(gather)
+        loop.run_until_complete(loop.shutdown_asyncgens())
+    finally:
+        loop.close()
+```
+
+...It's definitely a joke.
+
+Here, just treat pool as a context manager:
+
+```python
+with ProcessAsyncPoolExecutor() as pool:
+    do_something()
+```
+
+or remember to call `pool.shutdown()`.
+These help you deal with that joke.
+
+...
+
+What? You forget to call `pool.shutdown()`?!
+
+Ok, fine. It will shut down automatically when the program exits or it's garbage-collected.
 
 ## Like this?
 

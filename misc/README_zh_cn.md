@@ -11,7 +11,7 @@
 Aplex 是 asynchronous pool executor 的缩写，用于结合 asyncio 与
  multiprocessing 和 threading 的 Python 套件。
 
-- Aplex 帮助你在其他 process 或 thread 中执行 coroutine 和 function。
+- Aplex 帮助你在其他 process 或 thread 中执行 coroutine 和 function，同时达到并发与并行。
 - Aplex 提供的使用方式与标准库 `concurrent.futures` 相同，直觉又熟悉。
 - Aplex 让你执行负载平衡，如果有需要的话。
 
@@ -119,6 +119,7 @@ Aplex 提供了一些有用的负载平衡器。有：`RoundRobin`，`Random`，
 简单的在产生物件时传入你想要的给 keyword argument 即可：
 
 ```python
+from aplex import ProcessAsyncPoolExecutor
 from aplex.load_balancers import Average
 
 if __name__ == '__main__':
@@ -142,7 +143,7 @@ class MyAwesomeLoadBalancer(LoadBalancer):
         return the_poor_guy
 ```
 
-如何实作负载平衡器详见：[LoadBalancer in API Reference](https://aplex.readthedocs.io/en/latest/api.html#module-aplex.load_balancers)
+如何实作负载平衡器详见：[LoadBalancer | API Reference](https://aplex.readthedocs.io/en/latest/api.html#module-aplex.load_balancers)
 
 ### Worker loop factory
 
@@ -150,10 +151,48 @@ class MyAwesomeLoadBalancer(LoadBalancer):
 
 ```python
 import uvloop
+from aplex import ProcessAsyncPoolExecutor
 
 if __name__ == '__main__':
     pool = ProcessAsyncPoolExecutor(worker_loop_factory=uvloop.Loop)
 ```
+
+## 优雅地退出程序
+
+以 Python3.6为例，在没有 aplex 的情况下要优雅地退出程序会类似像：
+
+```python
+try:
+    loop.run_forever()
+finally:
+    try:
+        tasks = asyncio.Task.all_tasks()
+        if tasks:
+            for task in tasks:
+                task.cancel()
+            gather = asyncio.gather(*tasks)
+            loop.run_until_complete(gather)
+        loop.run_until_complete(loop.shutdown_asyncgens())
+    finally:
+        loop.close()
+```
+
+． ． ．这绝对是跟我开玩笑。
+
+这里你只需要把 pool 当成 context manager：
+
+```python
+with ProcessAsyncPoolExecutor() as pool:
+    do_something()
+```
+
+或记得呼叫 `pool.shutdown()`就行。这些帮你处理了这个问题。
+
+． ． ．
+
+什么？你忘了呼叫 `pool.shutdown()`？ ！
+
+Ok，好吧。它会自己在程序退出或被垃圾回收的时候自动关闭。
 
 ## 喜欢吗?
 
