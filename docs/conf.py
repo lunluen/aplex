@@ -98,7 +98,20 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'description': ('Asyncio + multiprocessing/threading. '
+                    'As easy as concurrent.futures!'),
+    'extra_nav_links': {'GitHub': 'https://github.com/lunluen/aplex'},
+    'analytics_id': 'UA-134670947-1',
+    'github_user': 'lunluen',
+    'github_repo': 'aplex',
+    'github_button': True,
+    'github_type': 'star',
+    'github_count': True,
+    'travis_button': True,
+    'codecov_button': True,
+    # donate_url: ,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
