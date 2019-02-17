@@ -170,7 +170,7 @@ if __name__ == '__main__':
 
 ## Graceful Exit
 
-Takeing Python3.6 for example, a graceful exit without aplex would be something like this:
+Taking Python3.6 for example, a graceful exit without aplex would be something like this:
 
 ```python
 try:
@@ -204,7 +204,7 @@ These help you deal with that joke.
 
 What? You forget to call `pool.shutdown()`?!
 
-Ok, fine. It will shut down automatically when the program exits or it's garbage-collected.
+Ok, fine. It will shut down automatically when the program exits or it gets garbage-collected.
 
 ## Like this?
 
