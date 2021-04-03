@@ -440,7 +440,7 @@ class BaseWorkerManager(object):
         return target  # For subclass' super(). No need to find it again.
 
     def are_all_workers_closed(self):
-        return False if self._workers else True
+        return not self._workers
 
     def wakeup(self):
         """To wake up form wait_return_item method."""
@@ -885,12 +885,12 @@ class BaseAsyncPoolExecutor(object):
         if not futures:
             return []
 
-        if self._awaitable:
-            if not compat.PY36:
-                return self._MapAsyncIterator(futures, end_time, self._loop)
-            return self._map_async_gen(futures, end_time)
-        else:
+        if not self._awaitable:
             return self._map_gen(futures, end_time)
+
+        if not compat.PY36:
+            return self._MapAsyncIterator(futures, end_time, self._loop)
+        return self._map_async_gen(futures, end_time)
 
 
     if compat.PY36:
