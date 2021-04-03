@@ -31,11 +31,7 @@ class TestCancel:
         executor = executor_factory(awaitable=awaitable)
         future = executor.submit(work)
 
-        if awaitable:
-            concurrent_fut = future._future
-        else:
-            concurrent_fut = future
-
+        concurrent_fut = future._future if awaitable else future
         while not concurrent_fut.running():
             time.sleep(0.1)
         assert not future.done()
