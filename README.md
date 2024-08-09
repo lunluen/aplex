@@ -214,8 +214,6 @@ Scroll up and click `Watch - Releases only` and `Star` as a thumbs up! :+1:
 
 Feel free to open a issue (just don't abuse it).
 
-Or contact me: `mas581301@gmail.com` :mailbox:
-
 Anything about aplex is welcome, such like bugs, system design, variable naming, even English grammer of docstrings!
 
 ## How to contribute
