@@ -98,7 +98,7 @@ class TestMap:
         if awaitable:
             results = tuple(self._async_for_consumer(map_results))
         else:
-            results = tuple(j for j in map_results)
+            results = tuple(map_results)
 
         assert results == target
 
